@@ -1,0 +1,38 @@
+{% block sw_customer_base_metadata_bound_saleschannel_content %}
+    <dd v-if="!customerEditMode" class="sw-customer-base__label-bound-sales-channel">
+        <template v-if="customer.boundSalesChannelId">
+            {{ customer.boundSalesChannel.translated.name }}
+        </template>
+        <template v-else>
+            {{ $tc('sw-customer.baseInfo.emptyBoundSalesChannel') }}
+        </template>
+    </dd>
+    <dd v-else>
+        <sw-entity-single-select
+        v-model:value="customer.boundSalesChannelId"
+        name="sw-customer-base__label-bound-sales-channel"
+        entity="sales_channel"
+        size="small"
+        show-clearable-button
+        />
+    </dd>
+{% endblock %}
+
+{% block sw_customer_base_metadata_customer_number %}
+    <sw-description-list>
+        <dt class="sw-customer-base-info__label">
+            {{ $tc('sw-customer.baseInfo.labelCustomerNumber') }}
+        </dt>
+        <dd class="sw-customer-base__label-customer-number" v-if="!customerEditMode">
+            {{ customer.customerNumber }}
+        </dd>
+        <dd v-else>
+            <sw-text-field
+                v-model:value="customer.customerNumber"
+                name="sw-field--customer-customerNumber"
+                :placeholder="$tc('sw-customer.baseInfo.placerholderCustomerNumber')"
+                size="small"
+            />
+        </dd>
+    </sw-description-list>
+{% endblock %}
