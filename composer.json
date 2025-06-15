@@ -2,10 +2,10 @@
     "name": "kaws-change-customer-number/kaws-change-customer-number",
     "description": "kaws-change-customer-number/kaws-change-customer-number",
     "type": "shopware-platform-plugin",
-    "version": "1.0.42",
+    "version": "1.0.43",
     "license": "MIT",
     "require": {
-        "shopware/core": "~6.5.0"
+        "shopware/core": "~6.6.0"
     },
     "extra": {
         "shopware-plugin-class": "KawsChangeCustomerNumber\\KawsChangeCustomerNumber",
